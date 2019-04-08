@@ -2,11 +2,9 @@ package Impl;
 
 import Interfaces.Operation;
 import Interfaces.Tirelire;
+import Utils.OperationType;
 
 import java.util.ArrayList;
-
-import static Utils.Util.CREDIT;
-import static Utils.Util.RETRAIT;
 
 public class TirelireImpl implements Tirelire {
     private double solde;
@@ -47,7 +45,7 @@ public class TirelireImpl implements Tirelire {
             System.out.println("Il n'y a pas assez d'argent dans la tirelire");
         } else {
             solde -= montant;
-            this.operations.add(new OperationImpl(montant, note, RETRAIT));
+            this.operations.add(new OperationImpl(montant, note, OperationType.RETRAIT));
         }
     }
 
@@ -57,7 +55,7 @@ public class TirelireImpl implements Tirelire {
             System.out.println("Impossible de verser un montant négatif");
         } else {
             solde += montant;
-            this.operations.add(new OperationImpl(montant, note, CREDIT));
+            this.operations.add(new OperationImpl(montant, note, OperationType.VERSEMENT));
         }
     }
 

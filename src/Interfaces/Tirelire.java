@@ -2,11 +2,11 @@ package Interfaces;
 
 public interface Tirelire {
 
-    public void retirer(double montant, String note);
+    void retirer(double montant, String note);
 
-    public void crediter(double montant, String note);
+    void crediter(double montant, String note);
 
-    public String description();
+    String description();
 
-    public void getOperationsList();
+    void getOperationsList();
 }
